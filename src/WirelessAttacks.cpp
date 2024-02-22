@@ -86,7 +86,7 @@ void Wireless_Attacks::CreepyMessage()
     Keyboard.print("cmd");
     delay(100); 
     PressEnter();
-    delay(500);
+    delay(700);
     Keyboard.print("start notepad");
     PressEnter();
     delay(400);
@@ -105,11 +105,14 @@ void Wireless_Attacks::CreepyMessage()
     delay(2000);
     Keyboard.print("THEY ARE COMMING FOR YOU");
     delay(4000);
-    for(int i = 0; i < 30; i++)
+    for(int i = 0; i < 50; i++)
     {
         PressEnter();
         Keyboard.print("HIDE.....");
-        delay(1000);
+        int MouseX = random(0, 1920);
+        int MouseY = random(0, 1080);
+        Mouse.move(MouseX, MouseY);
+        delay(200);
         
     }
 }
