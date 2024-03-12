@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wireless HID Attacks</title>
+  <script>
+    function ChangeIndex(index) {
+      window.location.href = index;
+      setTimeout(function() {
+        window.location.href = "default_index.html"; // Change this to your default index URL
+      }, 100);
+    }
+  </script>
+</head>
+<body>
+  <hr>
+  <center><h1>Wireless Attack Menu</h1></center> <hr>
+    <h2>Annoying</h2> 
+    <ol style="list-style-type: disc;">
+      <li><button onclick="ChangeIndex('/cmd')">Test Attack</button><br></li>
+      <li><button onclick="ChangeIndex('/shutdown')">Remote Shutdown</button></li>
+      <li><button onclick="ChangeIndex('/closeapplication')">Close Open Application</button></li>
+      <li><button onclick="ChangeIndex('/MoveMouse')">Jitter Mouse</button></li>
+      <li><button onclick="ChangeIndex('/CreepyMessage')">Send Creepy Message</button></li>
+      <li><button onclick="ChangeIndex('/RickRoll')">RickRoll(Browser Should Be Opened)</button></li>
+    </ol>
+</body>
+</html>

@@ -24,7 +24,7 @@ class Wireless_Attacks
     void RemoteShutdown();
 
     // close the application
-    void CloseApplication(); 
+    void CloseApplication();
 
     // open new tab with rickroll
     void RickRoll(); 
@@ -32,8 +32,9 @@ class Wireless_Attacks
     // print a creepy message on notepad
     void CreepyMessage(); 
 
-    // move you mouse to random location like 50 times
+    // move you mouse to random location like 100 times
     void MoveMouseToRandomLocations();
+
 
 
     // Attacks End
